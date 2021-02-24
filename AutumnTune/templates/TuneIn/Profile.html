@@ -1,0 +1,65 @@
+{% extends 'TuneIn/Header.html' %}
+{% block head %}
+<title>
+{% for i in data %}
+{{i.fname}} {{i.lname}}
+{% endfor %}
+</title>
+{% endblock %}
+{% block content %}
+<div class="jumbotron jumbotron-fluid">
+<div class="container" style="text-align:center;">
+{% for i in data %}
+<div class="row">
+<div class="col">
+<span style="font-size:30px;color:blue;">First Name</span> : <span style="font-size:30px;color:red;"><u>{{i.fname}}</u></span>
+</div>
+</div>
+<div class="row">
+<div class="col">
+<span style="font-size:30px;color:blue;">Middle Name</span> : <span style="font-size:30px;color:red;"><u>{{i.mname}}</u></span>
+</div>
+</div>
+<div class="row">
+<div class="col">
+<span style="font-size:30px;color:blue;">Last Name</span> : <span style="font-size:30px;color:red;"><u>{{i.lname}}</u></span>
+</div>
+</div>
+<div class="row">
+<div class="col">
+<span style="font-size:30px;color:blue;">Username</span> : <span style="font-size:30px;color:red;"><u>{{i.username}}</u></span>
+</div>
+</div>
+<div class="row">
+<div class="col">
+<span style="font-size:30px;color:blue;">Password</span> : <span style="font-size:30px;color:red;"><u>{{i.password}}</u></span>
+</div>
+</div>
+<div class="row">
+<div class="col">
+<span style="font-size:30px;color:blue;">Mobile Number</span> : <span style="font-size:30px;color:red;"><u>{{i.mobile}}</u></span>
+</div>
+</div>
+<div class="row">
+<div class="col">
+<span style="font-size:30px;color:blue;">Gender</span> : <span style="font-size:30px;color:red;"><u>{{i.gender}}</u></span>
+</div>
+</div>
+<div class="row">
+<div class="col">
+<span style="font-size:30px;color:blue;">Category</span> : <span style="font-size:30px;color:red;"><u>{{i.category}}</u></span>
+</div>
+</div>
+{% endfor %}
+<br/>
+<div class="row">
+<div class="col">
+<form action="/Logout/">
+{% csrf_token %}
+<button type="submit" class="btn btn-danger" style="width:250px;">Logout</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+{% endblock %}

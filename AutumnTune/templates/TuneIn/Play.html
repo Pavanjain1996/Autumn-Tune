@@ -1,0 +1,22 @@
+{% extends 'TuneIn/Header.html' %}
+{% block head %}
+<title>{{file.name}}</title>
+{% endblock %}
+{% block content %}
+<div class="jumbotron jumbotron-fluid">
+<div class="container">
+<div class="row">
+<div class="col-md-5">
+<img src="../../static/songs/{{file.album}}/{{file.image}}" width="300px" height="200px"/>
+</div>
+<div class="col-md-7">
+<span class="display-4" style="font-size:30px;"><a href="/songs/{{file.id}}" target="audioplayer">{{file.name}}</a></span><br/><br/>
+<span>{{file.singer}} &nbsp;&nbsp;&nbsp; {{file.album}}</span><br/><br/>
+<audio controls autoplay >
+<source src="../../static/songs/{{file.album}}/{{file.name}}">
+</audio>
+</div>
+</div>
+</div>
+</div>
+{% endblock %}
